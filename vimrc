@@ -74,6 +74,9 @@ au BufNewFile,BufRead *.json set ft=javascript
 
 au BufRead,BufNewFile *.txt call s:setupWrapping()
 
+" add scss syntax highlighting
+au BufRead,BufNewFile *.scss set filetype=scss
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
