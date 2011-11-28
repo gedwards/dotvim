@@ -1,0 +1,28 @@
+
+# add a new submodule
+# cd ~/.vim
+# mkdir ~/.vim/bundle
+#
+#git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
+#git submodule add https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+#git submodule add https://github.com/mileszs/ack.vim.git ~/.vim/bundle/ack
+#git submodule add https://github.com/ddollar/nerdcommenter.git ~/.vim/bundle/nerdcommenter
+# git submodule add git://git.wincent.com/command-t.git ~/.vim/bundle/commandT
+# git submodule add https://github.com/scrooloose/syntastic.git ~/.vim/bundle/syntastic
+# git submodule add https://github.com/pangloss/vim-javascript.git javascriptSyntax
+# git submodule add https://github.com/digitaltoad/vim-jade.git jadeSyntax
+
+# git add .
+# git commit -m "Install Fugitive.vim bundle as a submodule."
+
+# install on another machine
+cd ~
+git clone http://github.com/username/dotvim.git ~/.vim
+ln -s ~/.vim/vimrc ~/.vimrc
+ln -s ~/.vim/gvimrc ~/.gvimrc
+cd ~/.vim
+git submodule update --init
+# cd ~/.vim/bundle/fugitive
+# git pull origin master
+# or
+# git submodule foreach git pull origin master
