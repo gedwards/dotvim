@@ -50,9 +50,11 @@ if has("autocmd")
 endif
 
 function s:setupWrapping()
-  set wrap
-  set wrapmargin=2
-  set textwidth=72
+  :set wrap
+  :set linebreak
+  :set nolist
+  :set textwidth=0
+  :set wrapmargin=0
 endfunction
 
 function s:setupMarkup()
@@ -73,6 +75,8 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 au BufNewFile,BufRead *.json set ft=javascript
 
 au BufRead,BufNewFile *.txt call s:setupWrapping()
+autocmd BufEnter *.txt set spell
+" autocmd FileType txt source ~/.vim/txt.vim
 
 " add scss syntax highlighting
 au BufRead,BufNewFile *.scss set filetype=scss
