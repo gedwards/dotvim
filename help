@@ -1,0 +1,3 @@
+args **/*.rb
+argdo %s/old/new/gce | update
+
