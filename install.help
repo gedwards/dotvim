@@ -24,8 +24,16 @@ cd ~
 git clone git@github.com:gedwards/dotvim.git ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/gvimrc ~/.gvimrc
+ln -s ~/.vim/ackrc ~/.ackrc
 cd ~/.vim
 git submodule update --init
+
+cd ~/.vim/bundle/command-t
+rvm use 1.8.7
+rake make
+# then, in vim
+:call pathogen#helptags()
+exit # exit the shell
 
 # cd ~/.vim/bundle/fugitive
 # git pull origin master
