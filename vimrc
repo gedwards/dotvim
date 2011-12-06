@@ -16,6 +16,8 @@ noremap ;; ;
 map ; :
 " edit command-line
 map q; q:
+" exit insert mode
+imap jj <Esc>
 
 " make Ack easier to access
 map <Leader>a :Ack
