@@ -25,6 +25,8 @@ git clone git@github.com:gedwards/dotvim.git ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/gvimrc ~/.gvimrc
 ln -s ~/.vim/ackrc ~/.ackrc
+ln -s ~/.vim/gitconfig ~/.gitconfig
+ln -s ~/.vim/bash_profile ~/.bash_profile
 cd ~/.vim
 git submodule update --init
 
