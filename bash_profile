@@ -1,6 +1,16 @@
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-alias be='bundle exec'
+# export PATH="$PATH:/usr/local/share/npm/bin"
+# export NODE_PATH="/usr/local/lib/node_modules"
+
+#######################################################################################
+#  color chart:
+#  Black       0;30     Dark Gray     1;30      Blue        0;34     Light Blue    1;34
+#  Red         0;31     Light Red     1;31      Purple      0;35     Light Purple  1;35
+#  Green       0;32     Light Green   1;32      Cyan        0;36     Light Cyan    1;36
+#  Brown       0;33     Yellow        1;33      Light Gray  0;37     White         1;37
+#  No color    0
+
 #PS1="\w\$ "
+# \h:\W \u\$
 # If id command returns zero, you’ve root access.
 if [ $(id -u) -eq 0 ];
 then # you are root, set red colour prompt
@@ -10,6 +20,11 @@ else # normal
   #PS1="\\! \\W: "
 fi
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
-export PATH=$HOME/local/node/bin:$PATH
-export NODE_PATH=$HOME/local/node:$HOME/local/node/lib/node_modules
+
+alias mtab='open -a MacVim'
+alias be='bundle exec'
+
+if [ -f ~/.bashrc ]; then . ~/.bashrc ; fi
+
