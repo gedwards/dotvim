@@ -1,3 +1,9 @@
+export GIT_PS1_SHOWDIRTYSTATE=on
+export GIT_PS1_SHOWSTASHSTATE=on
+export GIT_PS1_SHOWUNTRACKEDFILES=on
+
+[ -f /usr/local/etc/bash_completion.d/git-completion.bash ] && source /usr/local/etc/bash_completion.d/git-completion.bash
+
 # export PATH="$PATH:/usr/local/share/npm/bin"
 # export NODE_PATH="/usr/local/lib/node_modules"
 
@@ -16,16 +22,13 @@ if [ $(id -u) -eq 0 ];
 then # you are root, set red colour prompt
   PS1="\\[$(tput setaf 1)\\]\\u@\\h:\\w #\\[$(tput sgr0)\\]"
 else # normal
-  PS1="\[\e[0;32m\]\\W$(__git_ps1 " (%s)")\$\[\e[0m\] " #green
-  # PS1="\[\e[0;32m\]\\W(\$(git branch 2>/dev/null | grep '^*' | colrm 1 2))\$\[\e[0m\] " #green
+  export PS1='\[\e[0;32m\]\W$(__git_ps1 "(%s)")\$\[\e[0m\] ' #green
   #PS1="\\! \\W: "
 fi
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-
 
 alias mtab='open -a MacVim'
 alias be='bundle exec'
 
 if [ -f ~/.bashrc ]; then . ~/.bashrc ; fi
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
