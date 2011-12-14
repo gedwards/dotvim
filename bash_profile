@@ -30,5 +30,6 @@ alias mtab='open -a MacVim'
 alias be='bundle exec'
 
 if [ -f ~/.bashrc ]; then . ~/.bashrc ; fi
+[ -f /usr/local/etc/bash_completion.d/cdargs-bash.sh ] && source /usr/local/etc/bash_completion.d/cdargs-bash.sh
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
