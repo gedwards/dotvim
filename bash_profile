@@ -1,6 +1,7 @@
 export GIT_PS1_SHOWDIRTYSTATE=on
-export GIT_PS1_SHOWSTASHSTATE=on
-export GIT_PS1_SHOWUNTRACKEDFILES=on
+export GIT_PS1_SHOWUPSTREAM="auto"=on
+# export GIT_PS1_SHOWSTASHSTATE=on
+# export GIT_PS1_SHOWUNTRACKEDFILES=on
 
 [ -f /usr/local/etc/bash_completion.d/git-completion.bash ] && source /usr/local/etc/bash_completion.d/git-completion.bash
 
