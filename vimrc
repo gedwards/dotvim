@@ -11,7 +11,7 @@ syntax on
 " Set encoding
 set encoding=utf-8
 
-" begin Greg improvements
+" --- begin Greg improvements ----------
 noremap ;; ;
 map ; :
 " edit command-line
@@ -22,7 +22,10 @@ imap jj <Esc>
 " make Ack easier to access
 map <Leader>a :Ack
 
-" end Greg improvements
+" keep searches away from the edge
+set scrolloff=5
+
+" --- end Greg improvements ------------
 
 " Whitespace stuff
 set nowrap
