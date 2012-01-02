@@ -28,6 +28,8 @@ set scrolloff=5
 " close the window to the left of this one
 noremap <silent> <Leader>ch :wincmd h<cr>:close<cr>
 
+" shortcut for Gdiff
+nnoremap :gd :Gdiff
 
 " faster search and replaces
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
