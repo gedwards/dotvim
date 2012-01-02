@@ -25,6 +25,19 @@ map <Leader>a :Ack
 " keep searches away from the edge
 set scrolloff=5
 
+" close the window to the left of this one
+noremap <silent> <Leader>ch :wincmd h<cr>:close<cr>
+
+
+" faster search and replaces
+:nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
+:nnoremap <Leader>ss :.,$s/\<<C-r><C-w>\>//g<Left><Left>
+:vmap <Leader>s "sy:%s/<C-R>=substitute(@s,"\n",'\\n','g')<CR>/
+
+" vmap <Leader>r "sy:%s/<C-R>"s/
+" [I shows all instances of the word under the cursor in the document
+" ]I shows all instances of the word under the cursor after your current location
+
 " --- end Greg improvements ------------
 
 " Whitespace stuff
