@@ -44,3 +44,6 @@ exit # exit the shell
 # git pull origin master
 # or
 # git submodule foreach git pull origin master
+
+# refresh vim with any changes made to :vimrc
+:so $MYVIMRC
