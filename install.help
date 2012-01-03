@@ -22,6 +22,7 @@
 # install on another machine
 # brew install git
 # brew install cdargs
+# PCKeyboardHack: http://pqrs.org/macosx/keyremap4macbook/extra.html
 
 cd ~
 git clone git@github.com:gedwards/dotvim.git ~/.vim
