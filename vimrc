@@ -17,7 +17,7 @@ map ; :
 " edit command-line
 map q; q:
 " exit insert mode
-imap jj <Esc>
+imap jj <C-n>
 
 " make Ack easier to access
 map <Leader>a :Ack
