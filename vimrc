@@ -16,8 +16,11 @@ noremap ;; ;
 map ; :
 " edit command-line
 map q; q:
-" exit insert mode
+" word completion
 imap jj <C-n>
+
+" text snippets
+imap bbb '-'*30
 
 " make Ack easier to access
 map <Leader>a :Ack
@@ -124,7 +127,7 @@ map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " Opens a tab edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>t
-map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+map <Leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
