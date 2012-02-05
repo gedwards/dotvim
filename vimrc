@@ -12,8 +12,14 @@ syntax on
 set encoding=utf-8
 
 " --- begin Greg improvements ----------
+" highlight (partial) word under cursor without moving
+:map <Leader>8 :let @/ = '\<'.expand('<cword>').'\>'\|set hlsearch<C-M>
+:map <Leader>g8 :let @/ = expand('<cword>')\|set hlsearch<C-M>
+
+" make it easier to type ':' commands without requiring the shift-key
 noremap ;; ;
 map ; :
+
 " edit command-line
 map q; q:
 " word completion
@@ -32,6 +38,9 @@ set scrolloff=5
 
 " close the window to the left of this one
 noremap <silent> <Leader>ch :wincmd h<cr>:close<cr>
+noremap <silent> <Leader>cl :wincmd l<cr>:close<cr>
+noremap <silent> <Leader>ck :wincmd k<cr>:close<cr>
+noremap <silent> <Leader>cj :wincmd j<cr>:close<cr>
 
 " shortcut for Gdiff
 nnoremap :gd :Gdiff
