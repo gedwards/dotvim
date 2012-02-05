@@ -23,7 +23,9 @@ imap jj <C-n>
 imap bbb '-'*30
 
 " make Ack easier to access
-map <Leader>a :Ack
+nnoremap <Leader>a :Ack
+" ack for current selection
+vmap <Leader>a "sy:Ack! "<C-R>""
 
 " keep searches away from the edge
 set scrolloff=5

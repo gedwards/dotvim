@@ -30,6 +30,7 @@ fi
 
 alias mtab='open -a MacVim'
 alias be='bundle exec'
+alias k1='kill -9 %1'
 
 if [ -f ~/.bashrc ]; then . ~/.bashrc ; fi
 [ -f /usr/local/etc/bash_completion.d/cdargs-bash.sh ] && source /usr/local/etc/bash_completion.d/cdargs-bash.sh
