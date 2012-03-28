@@ -48,3 +48,8 @@ exit # exit the shell
 
 # refresh vim with any changes made to :vimrc
 :so $MYVIMRC
+
+
+# Other apps
+# pomodoro
+# notational velocity
