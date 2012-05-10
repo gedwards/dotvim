@@ -34,7 +34,13 @@ nnoremap <Leader>a :Ack
 vmap <Leader>a "sy:Ack! "<C-R>""
 
 " keep searches away from the edge
-set scrolloff=5
+set scrolloff=1
+
+" easier window navigation
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
 
 " close the window to the left of this one
 noremap <silent> <Leader>ch :wincmd h<cr>:close<cr>
@@ -43,16 +49,49 @@ noremap <silent> <Leader>ck :wincmd k<cr>:close<cr>
 noremap <silent> <Leader>cj :wincmd j<cr>:close<cr>
 
 " shortcut for Gdiff
-nnoremap :gd :Gdiff
+" nnoremap :gd :Gdiff
 
 " faster search and replaces
-:nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
-:nnoremap <Leader>ss :.,$s/\<<C-r><C-w>\>//g<Left><Left>
+:nnoremap <Leader>s :%s///cg<Left><Left><Left><Left>
+:nnoremap <Leader>ss :.,$s///cg<Left><Left><Left><Left>
+:nnoremap <Leader>S :%s/\<<C-r><C-w>\>//g<Left><Left>
+:nnoremap <Leader>SS :.,$s/\<<C-r><C-w>\>//g<Left><Left>
 :vmap <Leader>s "sy:%s/<C-R>=substitute(@s,"\n",'\\n','g')<CR>/
 
 " vmap <Leader>r "sy:%s/<C-R>"s/
 " [I shows all instances of the word under the cursor in the document
 " ]I shows all instances of the word under the cursor after your current location
+
+"Ever notice a slight lag after typing the leader key + command? This lowers
+"the timeout.
+set timeoutlen=500
+
+"Prefer relative line numbering?
+"set relativenumber"
+
+"Enable code folding
+set foldenable
+
+"Shortcut to fold tags with leader (usually \) + ft
+nnoremap <leader>ft Vatzf
+
+" More useful command-line completion
+" set wildmenu
+
+"Auto-completion menu
+" set wildmode=list:longest
+
+"Bubble single lines (kicks butt)
+"http://vimcasts.org/episodes/bubbling-text/
+" nmap <C-Up> ddkP
+" nmap <C-Down> ddp
+
+"Bubble multiple lines
+" vmap <C-Up> xkP`[V`]
+" vmap <C-Down> xp`[V`]
+
+" print empty <a> tag
+" map! ;h <a href=""></a><ESC>5hi
 
 " --- end Greg improvements ------------
 
