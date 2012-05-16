@@ -12,6 +12,12 @@ syntax on
 set encoding=utf-8
 
 " --- begin Greg improvements ----------
+
+" jump to first word-letter within the first column
+" ?\%1c\w
+" jump to first word-letter within the cursor column
+:map <Leader>parent :exe '?\%' . col(".") . 'c\w'
+
 " highlight (partial) word under cursor without moving
 :map <Leader>8 :let @/ = '\<'.expand('<cword>').'\>'\|set hlsearch<C-M>
 :map <Leader>g8 :let @/ = expand('<cword>')\|set hlsearch<C-M>
