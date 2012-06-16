@@ -63,6 +63,7 @@ noremap <silent> <Leader>cj :wincmd j<cr>:close<cr>
 :nnoremap <Leader>S :%s/\<<C-r><C-w>\>//g<Left><Left>
 :nnoremap <Leader>SS :.,$s/\<<C-r><C-w>\>//g<Left><Left>
 :vmap <Leader>s "sy:%s/<C-R>=substitute(@s,"\n",'\\n','g')<CR>/
+:vmap <Leader>S "sy:.,$s/<C-R>=substitute(@s,"\n",'\\n','g')<CR>/
 
 " vmap <Leader>r "sy:%s/<C-R>"s/
 " [I shows all instances of the word under the cursor in the document
