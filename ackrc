@@ -1,5 +1,5 @@
 --type-add=ruby=.haml,.rake,.sass,.scss,.yml,.erb,.json
---type-add=js=.js,.coffee
+--type-add=js=.js,.coffee,.handlebars
 --ignore-dir=.bundle
 --ignore-dir=vendor
 --ignore-dir=tmp
