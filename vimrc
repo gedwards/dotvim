@@ -33,7 +33,7 @@ imap jj <C-n>
 
 " text snippets
 inoremap bbb '-'*30
-inoremap ccll console.log();<C-o>F)
+inoremap conl console.log();<C-o>F)
 
 " make Ack easier to access
 nnoremap <Leader>a :Ack
