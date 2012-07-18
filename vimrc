@@ -12,6 +12,13 @@ syntax on
 set encoding=utf-8
 
 " --- begin Greg improvements ----------
+" in Terminal on the Mac, change insert mode cursor to a pipe
+if &term =~ "xterm"
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
+nnoremap <F5> :GundoToggle<CR> " http://sjl.bitbucket.org/gundo.vim/
 
 " jump to first word-letter within the first column
 " ?\%1c\w
@@ -33,7 +40,7 @@ imap jj <C-n>
 
 " text snippets
 inoremap bbb '-'*30
-inoremap conl console.log();<C-o>F)
+inoremap lll console.log();<C-o>F)
 
 " make Ack easier to access
 nnoremap <Leader>a :Ack
