@@ -20,6 +20,26 @@ endif
 
 nnoremap <F5> :GundoToggle<CR> " http://sjl.bitbucket.org/gundo.vim/
 
+" Search and Replace in Multiple Files
+" example:
+" :vimgrep /CurrencyNumberHelper/ app/models/*.rb
+" :Qargs
+" :argdo %s/CurrencyNumberHelper/CurrencyHelper/g
+" :argdo update
+
+command! -nargs=0 -bar Qargs execute 'args' QuickfixFilenames()
+
+" populate the argument list with each of the files named in the quickfix list
+function! QuickfixFilenames()
+  let buffer_numbers = {}
+  for quickfix_item in getqflist()
+    let buffer_numbers[quickfix_item['bufnr']] = bufname(quickfix_item['bufnr'])
+  endfor
+  return join(map(values(buffer_numbers), 'fnameescape(v:val)'))
+endfunction
+" end of Search and Replace in Multiple Files
+
+
 " jump to first word-letter within the first column
 " ?\%1c\w
 " jump to first word-letter within the cursor column
@@ -148,7 +168,7 @@ if has("autocmd")
     \| exe "normal g'\"" | endif
 endif
 
-function s:setupWrapping()
+function s:gregSetupWrapping()
   :set wrap
   :set linebreak
   :set nolist
@@ -157,7 +177,7 @@ function s:setupWrapping()
 endfunction
 
 function s:setupMarkup()
-  call s:setupWrapping()
+  call s:gregSetupWrapping()
   map <buffer> <Leader>p :Hammer<CR>
 endfunction
 
@@ -173,7 +193,7 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
 
-au BufRead,BufNewFile *.txt call s:setupWrapping()
+au BufRead,BufNewFile *.txt call s:gregSetupWrapping()
 autocmd BufEnter *.txt set spell
 " autocmd FileType txt source ~/.vim/txt.vim
 
