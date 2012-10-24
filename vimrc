@@ -64,6 +64,8 @@ imap \t <Esc><Leader>t
 inoremap bbb '-'*30
 inoremap lll console.log();<C-o>F)
 inoremap efff <Esc>bieffort <Esc>Ypibetter:<Esc>piworse:<Esc>piexpected:<Esc>kk^f l
+inoremap tsk <Esc>yyp:s/^  *//e<CR>:s/  *$//e<CR>:s/[^-_ a-zA-Z0-9]//ge<CR>:s/ /_/ge<CR>Vu==itask <Esc>kddpkA "<Esc>JxA" {<CR>}<Esc>:noh<CR>ko
+
 
 " make Ack easier to access
 nnoremap <Leader>a :Ack
