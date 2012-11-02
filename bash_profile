@@ -13,6 +13,9 @@ export GIT_PS1_SHOWUPSTREAM="git"
 
 [ -f /usr/local/etc/bash_completion.d/git-completion.bash ] && source /usr/local/etc/bash_completion.d/git-completion.bash
 
+# Git prompt
+[[ $- == *i* ]]   &&   . ~/.vim/git-prompt.sh
+
 # export PATH="$PATH:/usr/local/share/npm/bin"
 # export NODE_PATH="/usr/local/lib/node_modules"
 
