@@ -15,6 +15,7 @@
 # git submodule add https://github.com/pangloss/vim-javascript.git bundle/vim-javascript
 # git submodule add https://github.com/digitaltoad/vim-jade.git bundle/vim-jade
 # git submodule add https://github.com/cakebaker/scss-syntax.vim.git bundle/scss-syntax-vim
+# git submodule add https://github.com/vim-scripts/VOoM bundle/voom
 # 
 # git add .
 # git commit -m "Install Fugitive.vim bundle as a submodule."

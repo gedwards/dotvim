@@ -153,7 +153,7 @@ set smartcase
 
 " Tab completion
 " set wildmode=list:longest,list:full
-" set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+set wildignore+=*.png,*.jpg,*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 
 " Status bar
 set laststatus=2

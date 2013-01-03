@@ -1,5 +1,5 @@
 # set VI as the command line editor
-set -o vi
+# set -o vi
 
 alias er='env | grep RAILS_ENV'
 alias erd='export RAILS_ENV=development; echo $RAILS_ENV'
