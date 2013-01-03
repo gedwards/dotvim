@@ -11,7 +11,10 @@
   who = shortlog -s --
   lg = log -p
   lgl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-
+  # shortlog
+  # new = !sh -c 'git log $1@{1}..$1@{0} "$@"' # see what new commits have been created by the last command (typically after a "git pull")
+  # prune-all = !git remote | xargs -n 1 git remote prune
+  #
 [user]
 	name = Greg Edwards
 	email = greg@greglearns.com
@@ -19,9 +22,18 @@
 	ui = true
 [core]
 	excludesfile = /Users/gedwards/.gitignore_global
+	whitespace = space-before-tab,tabwidth=2,trailing-space
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[rerere]
+	enabled = 1
+[push]
+	default = nothing
+[branch]
+	autosetuprebase = always
+[rebase]
+	stat = true
