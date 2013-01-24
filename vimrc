@@ -1,8 +1,49 @@
-call pathogen#infect()
-call pathogen#helptags()
 syntax on
-filetype plugin indent on
 set nocompatible
+
+" --- vundle begin ---
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" original repos on github
+Bundle 'pangloss/vim-javascript.git'
+Bundle 'scrooloose/nerdtree.git'
+Bundle 'ddollar/nerdcommenter.git'
+Bundle 'scrooloose/syntastic.git'
+Bundle 'cakebaker/scss-syntax.vim.git'
+Bundle 'tpope/vim-fugitive'
+Bundle 'maxmeyer/vim-taskjuggler'
+Bundle 'Lokaltog/powerline'
+Bundle 'mkitt/browser-refresh.vim'
+Bundle 'gmarik/ide-popup.vim'
+Bundle 'gmarik/github-search.vim'
+Bundle 'AndrewRadev/splitjoin.vim'
+" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+" vim-scripts repos
+Bundle 'VOoM'
+Bundle 'bufexplorer.zip'
+Bundle 'gitv'
+Bundle 'Gundo'
+Bundle 'Handlebars'
+Bundle 'EasyMotion'
+Bundle 'ack.vim'
+Bundle 'ZoomWin'
+Bundle 'surround.vim'
+Bundle 'repeat.vim'
+Bundle 'jQuery'
+
+" non github repos
+Bundle 'git://git.wincent.com/command-t.git'
+
+filetype plugin indent on
+
+" --- vundle end -----
 
 set number
 set ruler

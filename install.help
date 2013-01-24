@@ -1,26 +1,6 @@
 
-# add a new submodule
-# cd ~/.vim
-# mkdir ~/.vim/bundle
-#
-# rm .gitmodules
-# git submodule add https://github.com/pangloss/vim-javascript.git bundle/vim-javascript
-# git submodule add https://github.com/digitaltoad/vim-jade.git bundle/vim-jade
-# git submodule add http://github.com/tpope/vim-fugitive.git bundle/vim-fugitive
-# git submodule add https://github.com/scrooloose/nerdtree.git bundle/nerdtree
-# git submodule add git://github.com/mileszs/ack.vim.git bundle/ack-vim
-# git submodule add https://github.com/ddollar/nerdcommenter.git bundle/nerdcommenter
-# git submodule add git://git.wincent.com/command-t.git bundle/command-t
-# git submodule add https://github.com/scrooloose/syntastic.git bundle/syntastic
-# git submodule add https://github.com/pangloss/vim-javascript.git bundle/vim-javascript
-# git submodule add https://github.com/digitaltoad/vim-jade.git bundle/vim-jade
-# git submodule add https://github.com/cakebaker/scss-syntax.vim.git bundle/scss-syntax-vim
-# git submodule add https://github.com/vim-scripts/VOoM bundle/voom
-# 
-# git add .
-# git commit -m "Install Fugitive.vim bundle as a submodule."
-
 # install on another machine
+# git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 # brew install git
 # brew install cdargs
 # PCKeyboardHack: http://pqrs.org/macosx/keyremap4macbook/extra.html
@@ -34,23 +14,18 @@ ln -s ~/.vim/gitconfig ~/.gitconfig
 ln -s ~/.vim/git-prompt.conf ~/.git-prompt.conf
 ln -s ~/.vim/bash_profile ~/.bash_profile
 cd ~/.vim
-git submodule update --init
+
+# open vim
+# :BundleInstall
+# exit vim
 
 cd ~/.vim/bundle/command-t
 rvm use system # or rvm use 1.8.7
 rake make
-# then, in vim
-:call pathogen#helptags()
 exit # exit the shell
-
-# cd ~/.vim/bundle/fugitive
-# git pull origin master
-# or
-# git submodule foreach git pull origin master
 
 # refresh vim with any changes made to :vimrc
 :so $MYVIMRC
-
 
 # Other apps
 # pomodoro
