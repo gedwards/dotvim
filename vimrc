@@ -202,6 +202,7 @@ set laststatus=2
 " NERDTree configuration
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
+map <Leader>nn :NERDTreeFind<CR>
 
 " Command-T configuration
 let g:CommandTMaxHeight=20
