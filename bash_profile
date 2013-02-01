@@ -5,6 +5,8 @@ alias er='env | grep RAILS_ENV'
 alias erd='export RAILS_ENV=development; echo $RAILS_ENV'
 alias ert='export RAILS_ENV=test; echo $RAILS_ENV'
 
+EDITOR=/usr/bin/vim; export EDITOR
+
 export GIT_PS1_SHOWDIRTYSTATE=on
 export GIT_PS1_SHOWUPSTREAM="git"
 # export GIT_PS1_SHOWUPSTREAM="git verbose"

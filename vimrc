@@ -113,6 +113,9 @@ nnoremap <Leader>a :Ack
 " ack for current selection
 vmap <Leader>a "sy:Ack! "<C-R>""
 
+" ZoomWin
+nnoremap <Leader>z :ZoomWin<cr>
+
 " keep searches away from the edge
 set scrolloff=1
 
