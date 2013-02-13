@@ -15,6 +15,12 @@
   # new = !sh -c 'git log $1@{1}..$1@{0} "$@"' # see what new commits have been created by the last command (typically after a "git pull")
   # prune-all = !git remote | xargs -n 1 git remote prune
   #
+  # ll = log --pretty=format:'%Cred%h %Cblue%an %Cgreen%s%Creset %ar' --abbrev-commit -n15
+  # puff = pull --ff-only
+  # down = !sh -c 'CURRENT=$(git symbolic-ref HEAD | sed -e s@.*/@@) && (git pull --ff-only || (git fetch origin && git rebase --preserve-merges origin/$CURRENT))'
+  # publish = "!f() { if [ $# -ne 1 ]; then echo 'usage: git publish <local-branch-name>' >&2; exit 1; fi; git push --set-upstream origin $1:$1; }; f"
+  # unpublish = "!f() { if [ $# -ne 1 ]; then echo 'usage: git unpublish <remote-branch-name>' >&2; exit 1; fi; git push origin :$1; }; f"
+
 [user]
 	name = Greg Edwards
 	email = greg@greglearns.com
@@ -25,7 +31,6 @@
 	whitespace = space-before-tab,tabwidth=2,trailing-space
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -33,7 +38,3 @@
 	enabled = 1
 [push]
 	default = nothing
-[branch]
-	autosetuprebase = always
-[rebase]
-	stat = true
