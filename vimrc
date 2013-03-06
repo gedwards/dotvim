@@ -53,6 +53,18 @@ syntax on
 set encoding=utf-8
 
 " --- begin Greg improvements ----------
+
+" copy quicklist entries into args # http://blog.siyelo.com/vim-tips-part-ii
+command! -nargs=0 -bar Qargs execute 'args' QuickfixFilenames()
+" populate the argument list with each of the files named in the quickfix list
+function! QuickfixFilenames()
+  let buffer_numbers = {}
+  for quickfix_item in getqflist()
+    let buffer_numbers[quickfix_item['bufnr']] = bufname(quickfix_item['bufnr'])
+  endfor
+  return join(map(values(buffer_numbers), 'fnameescape(v:val)'))
+endfunction
+
 " in Terminal on the Mac, change insert mode cursor to a pipe
 if &term =~ "xterm"
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
