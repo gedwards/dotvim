@@ -19,7 +19,7 @@ Bundle 'scrooloose/syntastic.git'
 Bundle 'cakebaker/scss-syntax.vim.git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'maxmeyer/vim-taskjuggler'
-Bundle 'Lokaltog/powerline'
+" Bundle 'Lokaltog/powerline'
 Bundle 'mkitt/browser-refresh.vim'
 Bundle 'gmarik/ide-popup.vim'
 Bundle 'gmarik/github-search.vim'
@@ -28,6 +28,7 @@ Bundle 'mileszs/ack.vim'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " vim-scripts repos
 Bundle 'VOoM'
+" Bundle 'Vitality'
 Bundle 'bufexplorer.zip'
 Bundle 'gitv'
 Bundle 'Gundo'
@@ -69,6 +70,26 @@ endfunction
 if &term =~ "xterm"
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
+" tmux will only forward escape sequences to the terminal if surrounded by a
+" DCS sequence
+" "
+" http://sourceforge.net/mailarchive/forum.php?thread_name=AANLkTinkbdoZ8eNR1X2UobLTeww1jFrvfJxTMfKSq-L%2B%40mail.gmail.com&forum_name=tmux-users
+"
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
+  " Cmd-T tweaks
+  " as of March 2013, with current iTerm (1.0.0.20130319), tmux (1.8)
+  "   " and Vim (7.3, with patches 1-843), this is all I need:
+  let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
+  "
+  "       " when I originally started using Command-T inside a terminal,
+  "         " I used to need these as well:
+  let g:CommandTSelectNextMap = ['<C-j>', '<ESC>OB']
+  let g:CommandTSelectPrevMap = ['<C-k>', '<ESC>OA']
 endif
 
 nnoremap <F5> :GundoToggle<CR> " http://sjl.bitbucket.org/gundo.vim/
