@@ -40,6 +40,7 @@ else # normal
   #PS1="\\! \\W: "
 fi
 
+alias ap='ansible-playbook'
 alias mtab='open -a MacVim'
 alias be='bundle exec'
 alias k1='kill -9 %1'

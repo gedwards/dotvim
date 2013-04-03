@@ -46,6 +46,13 @@ filetype plugin indent on
 
 " --- vundle end -----
 
+" --- SETTINGS for vundle installs begin -----
+let g:RefreshRunningBrowserDefault = 'chrome'
+map <silent><leader>r :RRB<CR>
+imap \r <Esc>:RRB<CR>i
+
+" --- SETTINGS for vundle installs end -----
+
 set number
 set ruler
 syntax on
@@ -136,9 +143,11 @@ imap \t <Esc><Leader>t
 
 " text snippets
 inoremap bbb '-'*30
+inoremap xxx [x]
 inoremap lll console.log();<C-o>F)
 inoremap efff <Esc>bieffort <Esc>Ypibetter:<Esc>piworse:<Esc>piexpected:<Esc>kk^f l
 inoremap tsk <Esc>yyp:s/^  *//e<CR>:s/  *$//e<CR>:s/[^-_ a-zA-Z0-9]//ge<CR>:s/ /_/ge<CR>Vu==itask <Esc>kddpkA "<Esc>JxA" {<CR>}<Esc>:noh<CR>ko
+inoremap comppp complete: <Esc>:r ! ruby -e "require 'date'; print Date.today.to_s"<CR>kJ$a
 
 
 " make Ack easier to access
