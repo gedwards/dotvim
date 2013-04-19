@@ -24,8 +24,10 @@ Bundle 'mkitt/browser-refresh.vim'
 Bundle 'gmarik/ide-popup.vim'
 Bundle 'gmarik/github-search.vim'
 Bundle 'AndrewRadev/splitjoin.vim'
+Bundle 'avakhov/vim-yaml'
 Bundle 'mileszs/ack.vim'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+
 " vim-scripts repos
 Bundle 'VOoM'
 " Bundle 'Vitality'
@@ -61,6 +63,7 @@ syntax on
 set encoding=utf-8
 
 " --- begin Greg improvements ----------
+set mouse=a
 
 " copy quicklist entries into args # http://blog.siyelo.com/vim-tips-part-ii
 command! -nargs=0 -bar Qargs execute 'args' QuickfixFilenames()
