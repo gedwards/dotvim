@@ -1,9 +1,11 @@
 
 # install on another machine
-# git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-# brew install git
-# brew install cdargs
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+brew install git
+brew install cdargs
+brew install reattach-to-user-namespace
 # PCKeyboardHack: http://pqrs.org/macosx/keyremap4macbook/extra.html
+
 
 cd ~
 git clone git@github.com:gedwards/dotvim.git ~/.vim
