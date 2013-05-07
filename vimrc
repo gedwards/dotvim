@@ -26,10 +26,13 @@ Bundle 'gmarik/github-search.vim'
 Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'avakhov/vim-yaml'
 Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 " vim-scripts repos
 Bundle 'VOoM'
+Bundle 'surround.vim'
+
 " Bundle 'Vitality'
 Bundle 'bufexplorer.zip'
 Bundle 'gitv'
@@ -243,7 +246,7 @@ set smartcase
 
 " Tab completion
 " set wildmode=list:longest,list:full
-set wildignore+=*.png,*.jpg,*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+set wildignore+=*.png,*.jpg,*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,.bundle,bundle
 
 " Status bar
 set laststatus=2
