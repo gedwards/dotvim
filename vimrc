@@ -155,11 +155,14 @@ inoremap efff <Esc>bieffort <Esc>Ypibetter:<Esc>piworse:<Esc>piexpected:<Esc>kk^
 inoremap tsk <Esc>yyp:s/^  *//e<CR>:s/  *$//e<CR>:s/[^-_ a-zA-Z0-9]//ge<CR>:s/ /_/ge<CR>Vu==itask <Esc>kddpkA "<Esc>JxA" {<CR>}<Esc>:noh<CR>ko
 inoremap comppp complete: <Esc>:r ! ruby -e "require 'date'; print Date.today.to_s"<CR>kJ$a
 
+" refactoring
+vmap <Leader>extract "ty<Esc>`<j0V`>dh\parent<CR>%o<CR>def<Esc>"tpkJ`]Oend<Esc>v%=:nohlsearch<CR>
+" vmap <Leader>extract "ty<Esc>`<j0V`>d<Leader>^[h\parent^M%o^Mdef^["tpkJ`]Oend^[v%==q
 
 " make Ack easier to access
-nnoremap <Leader>a :Ack
+nnoremap <Leader>a :Ag
 " ack for current selection
-vmap <Leader>a "sy:Ack! "<C-R>""
+vmap <Leader>a "sy:Ag! "<C-R>""
 
 " ZoomWin
 nnoremap <Leader>z :ZoomWin<cr>
@@ -251,9 +254,9 @@ set wildignore+=*.png,*.jpg,*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,.bun
 set laststatus=2
 
 " NERDTree configuration
-let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
-map <Leader>n :NERDTreeToggle<CR>
-map <Leader>nn :NERDTreeFind<CR>
+" let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
+" map <Leader>n :NERDTreeToggle<CR>
+" map <Leader>nn :NERDTreeFind<CR>
 
 " Command-T configuration
 let g:CommandTMaxHeight=20
