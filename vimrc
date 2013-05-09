@@ -13,7 +13,7 @@ Bundle 'gmarik/vundle'
 
 " original repos on github
 Bundle 'pangloss/vim-javascript.git'
-Bundle 'scrooloose/nerdtree.git'
+" Bundle 'scrooloose/nerdtree.git'
 Bundle 'ddollar/nerdcommenter.git'
 Bundle 'scrooloose/syntastic.git'
 Bundle 'cakebaker/scss-syntax.vim.git'
@@ -154,10 +154,13 @@ inoremap lll console.log();<C-o>F)
 inoremap efff <Esc>bieffort <Esc>Ypibetter:<Esc>piworse:<Esc>piexpected:<Esc>kk^f l
 inoremap tsk <Esc>yyp:s/^  *//e<CR>:s/  *$//e<CR>:s/[^-_ a-zA-Z0-9]//ge<CR>:s/ /_/ge<CR>Vu==itask <Esc>kddpkA "<Esc>JxA" {<CR>}<Esc>:noh<CR>ko
 inoremap comppp complete: <Esc>:r ! ruby -e "require 'date'; print Date.today.to_s"<CR>kJ$a
+inoremap tms <Esc>mo:read! ruby -e "print Time.now.strftime('\%Y.\%m.\%d.\%H.\%M.\%S')"<CR>`oJEa
 
 " refactoring
 vmap <Leader>extract "ty<Esc>`<j0V`>dh\parent<CR>%o<CR>def<Esc>"tpkJ`]Oend<Esc>v%=:nohlsearch<CR>
-" vmap <Leader>extract "ty<Esc>`<j0V`>d<Leader>^[h\parent^M%o^Mdef^["tpkJ`]Oend^[v%==q
+
+" scratch buffer
+map \scratch <Esc>:e scratch<CR>:set buftype=nofile<CR>:set bufhidden=hide<CR>:setlocal noswapfile<CR>
 
 " make Ack easier to access
 nnoremap <Leader>a :Ag
