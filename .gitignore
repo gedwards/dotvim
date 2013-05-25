@@ -1,5 +1,4 @@
-*.swp
-*.swo
+.release-notes.txt
+command-t.recipe
+bundle
 backup
-.netrwhist
-bundle/*

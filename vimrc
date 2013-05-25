@@ -27,6 +27,7 @@ Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'avakhov/vim-yaml'
 Bundle 'mileszs/ack.vim'
 Bundle 'rking/ag.vim'
+Bundle 'kien/ctrlp.vim'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 " vim-scripts repos
@@ -45,7 +46,7 @@ Bundle 'repeat.vim'
 Bundle 'jQuery'
 
 " non github repos
-Bundle 'git://git.wincent.com/command-t.git'
+" Bundle 'git://git.wincent.com/command-t.git'
 
 filetype plugin indent on
 
@@ -144,8 +145,10 @@ map ; :
 map q; q:
 " word completion
 imap jj <C-n>
+
 " show file list, even in Insert mode
-imap \t <Esc><Leader>t
+imap \t <Esc><c-p>
+" imap \t <Esc><Leader>t
 
 " text snippets
 inoremap bbb '-'*30
@@ -174,16 +177,16 @@ nnoremap <Leader>z :ZoomWin<cr>
 set scrolloff=1
 
 " easier window navigation
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
+nmap <C-H> <C-w>h
+nmap <C-J> <C-w>j
+nmap <C-K> <C-w>k
+nmap <C-L> <C-w>l
 
 " close the window to the left of this one
-noremap <silent> <Leader>ch :wincmd h<cr>:close<cr>
-noremap <silent> <Leader>cl :wincmd l<cr>:close<cr>
-noremap <silent> <Leader>ck :wincmd k<cr>:close<cr>
-noremap <silent> <Leader>cj :wincmd j<cr>:close<cr>
+noremap <silent> <Leader>hc :wincmd h<cr>:close<cr>
+noremap <silent> <Leader>lc :wincmd l<cr>:close<cr>
+noremap <silent> <Leader>kc :wincmd k<cr>:close<cr>
+noremap <silent> <Leader>jc :wincmd j<cr>:close<cr>
 
 " shortcut for Gdiff
 " nnoremap :gd :Gdiff
@@ -251,7 +254,7 @@ set smartcase
 
 " Tab completion
 " set wildmode=list:longest,list:full
-set wildignore+=*.png,*.jpg,*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,.bundle,bundle
+set wildignore+=*.png,*.jpg,*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,.bundle,*/bundle/*,*/fixtures/*
 
 " Status bar
 set laststatus=2
