@@ -67,6 +67,8 @@ syntax on
 set encoding=utf-8
 
 " --- begin Greg improvements ----------
+let g:netrw_list_hide='\.DS_Store'
+
 set mouse=a
 
 " copy quicklist entries into args # http://blog.siyelo.com/vim-tips-part-ii
